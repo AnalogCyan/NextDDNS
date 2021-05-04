@@ -1,7 +1,5 @@
-FROM alpine:3.12
+FROM curlimages/curl:latest
 
 ENV ADDR 0.0.0.0
 
-RUN apk --update-cache add procps curl
-
-CMD ["sh","-c","watch -d curl -s ${ADDR}"]
+CMD ["sh","-c","watch -d curl -S ${ADDR}"]
